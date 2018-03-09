@@ -1,7 +1,5 @@
 \version "2.18"
 
-% \paper { #(set-paper-size "a5") }
-
 \header {
   title = "Chapelloise"
   composer = "Solune"
@@ -13,6 +11,9 @@
 
 melody = \relative c'' {
   \clef treble
+  \key a \minor
+  \time 12/8
+  \tempo 2. = 70
 
   \repeat volta 2 {
     e8 f e  d e c  d b c  a b g
@@ -55,23 +56,11 @@ melody = \relative c'' {
 }
 
 \score {
-  \new Staff <<
-    \time 12/8
-    \key a \minor
-    \tempo 2. = 70
-    \melody
-  >>
+  \melody
   \layout {}
 }
 
 \score {
-  \unfoldRepeats {
-    \new Staff <<
-      \time 12/8
-      \key a \minor
-      \tempo 2. = 70
-      \melody
-    >>
-  }
+  \unfoldRepeats \melody
   \midi {}
 }
