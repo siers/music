@@ -55,12 +55,35 @@ melody = \relative c'' {
   \bar "|."
 }
 
+harmonies = \chords {
+  \repeat volta 2 {
+    f2. g a:m/e g  f g f4. g e:m a:m/e
+  }
+
+  \repeat volta 2 {
+    f4. d:m f d:m  e2.:m e:m  f2. f2.
+  }
+  \alternative {
+    { f2. g4 d:min g }
+    { d2. d }
+  }
+
+  f2. g c f   d:m e:m a,:m cis:dim
+  f2. g c f   d:m e:m a,1.:m
+}
+
 \score {
-  \melody
+  <<
+    \melody
+    \harmonies
+  >>
   \layout {}
 }
 
 \score {
-  \unfoldRepeats \melody
+  \unfoldRepeats <<
+    \melody
+    \harmonies
+  >>
   \midi {}
 }
