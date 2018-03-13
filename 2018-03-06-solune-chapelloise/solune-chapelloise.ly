@@ -25,7 +25,7 @@ melody = \relative c'' {
   \break
 
   \repeat volta 2 {
-    f4.  a,8 b c
+    f4.^"var. 1, 2"  a,8 b c
     f4.  a,8 b c
 
     e4.  a,8 b c
@@ -72,12 +72,33 @@ harmonies = \chords {
   f2. g c f   d:m e:m a,1.:m
 }
 
+variations = \relative c'' {
+  \omit Staff.TimeSignature
+  \cadenzaOn
+
+  f4^"1." f8
+  \hideNotes r4 \stopStaff r2. \startStaff r4 \unHideNotes
+
+  f8^"2." g8 f8
+  \hideNotes r8
+
+  \bar "|."
+}
+
 \score {
   <<
     \melody
     \harmonies
   >>
   \layout {}
+}
+
+\score {
+  \variations
+  \layout {}
+  \header {
+    piece = "Variations"
+  }
 }
 
 \score {
