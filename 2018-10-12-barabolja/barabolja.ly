@@ -11,15 +11,21 @@ melody = \relative c' {
 
   \repeat volta 2 {
     as'8 as16 bes16 c16 bes as8 | g8 es g4 |
-    d8 d16 es f8 g16 f | es8 d c4
+    d8 d16 es f8 g16 f |
+  }
+
+  \alternative {
+    { es8 d c4 }
+    { es8 d c8 f~ }
   }
 
   \break
 
-  r8 f~ f f es es d d |
-  c8 f~ f f es es d d |
-  c8 f~ f f es es d d |
-  c4 g'4 | g g8 g | g4
+  f f es es | d d c8 f~ |
+  f f es es | d d c8 f~ |
+  f f es es | d d c4 |
+  g' g | g8 g8 g4
+  % c4 g'4 | g g8 g | g4
 }
 
 harmonies = \chords {
