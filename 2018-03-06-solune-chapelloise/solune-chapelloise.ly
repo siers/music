@@ -13,7 +13,7 @@ melody = \relative c'' {
   \clef treble
   \key a \minor
   \time 12/8
-  \tempo 2. = 70
+  \tempo 2 = 100
 
   \repeat volta 2 {
     e8 f e  d e c  d b c  a b g
